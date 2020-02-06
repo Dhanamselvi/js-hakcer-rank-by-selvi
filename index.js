@@ -74,3 +74,49 @@ console.log(minus/arr.length);
 console.log(zero/arr.length);
 }
 console.log(PositiveNegative([1,-2,3,4,5,-6,7,8,0,0]));
+
+
+// Staircase (some Doubts is there)
+
+function stairCase(n){
+  if(typeof n === "number" && n === parseInt(n,0)){
+    for(let r = 1; r <= n; r++){
+      let blanks = [ ...[], ...Array(n-r) ].map(i => '@');
+      let hashes = [ ...[], ...Array(n - (n-r))].map(i => '#');
+      console.log([ ...blanks, 
+                    ...hashes 
+                  ].join(''));
+    }
+  }
+}
+console.log(stairCase(3));
+
+
+// MinMax Sum Values
+
+function minimumMaximum(arr){
+  var maxi = Math.max(...arr);     // In ES5 it will be  /* Math.max.apply(Math,arr)*/  ===> Maxi = 5
+  var mini = Math.min(...arr);     // In ES5 it will be  /* Math.min.apply(Math,arr)*/  ===> Mini = 1
+
+  var maxiFilter = arr.filter(function(currentArray){
+    return currentArray > mini;         // [2,3,4,5]
+  });
+
+  var miniFilter = arr.filter(function(currentArray){
+    return currentArray < maxi;       // [1,2,3,4]
+  });
+
+  var MaxSum = 0;                   //  14
+  var MinSum = 0;                  //   10
+
+  for(let i = 0; i < maxiFilter.length; i++){
+    MaxSum += maxiFilter[i];    
+  };
+
+  for(let i = 0; i < miniFilter.length; i++){
+    MinSum += miniFilter[i];    
+  }
+
+  return MaxSum + " " + " " + MinSum;
+}
+console.log(minimumMaximum([1,2,3,4,5]));
