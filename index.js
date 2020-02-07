@@ -94,29 +94,45 @@ console.log(stairCase(3));
 
 // MinMax Sum Values
 
-function minimumMaximum(arr){
-  var maxi = Math.max(...arr);     // In ES5 it will be  /* Math.max.apply(Math,arr)*/  ===> Maxi = 5
-  var mini = Math.min(...arr);     // In ES5 it will be  /* Math.min.apply(Math,arr)*/  ===> Mini = 1
+// function minimumMaximum(arr){
+//   var maxi = Math.max(...arr);     // In ES5 it will be  /* Math.max.apply(Math,arr)*/  ===> Maxi = 5
+//   var mini = Math.min(...arr);     // In ES5 it will be  /* Math.min.apply(Math,arr)*/  ===> Mini = 1
 
-  var maxiFilter = arr.filter(function(currentArray){
-    return currentArray > mini;         // [2,3,4,5]
-  });
+//   var maxiFilter = arr.filter(function(currentArray){
+//     return currentArray > mini;         // [2,3,4,5]
+//   });
 
-  var miniFilter = arr.filter(function(currentArray){
-    return currentArray < maxi;       // [1,2,3,4]
-  });
+//   var miniFilter = arr.filter(function(currentArray){
+//     return currentArray < maxi;       // [1,2,3,4]
+//   });
 
-  var MaxSum = 0;                   //  14
-  var MinSum = 0;                  //   10
+//   var MaxSum = 0;                   //  14
+//   var MinSum = 0;                  //   10
 
-  for(let i = 0; i < maxiFilter.length; i++){
-    MaxSum += maxiFilter[i];    
-  };
+//   for(let i = 0; i < maxiFilter.length; i++){
+//     MaxSum += maxiFilter[i];    
+//   };
 
-  for(let i = 0; i < miniFilter.length; i++){
-    MinSum += miniFilter[i];    
-  }
+//   for(let i = 0; i < miniFilter.length; i++){
+//     MinSum += miniFilter[i];    
+//   }
 
-  return MaxSum + " " + " " + MinSum;
+//   return MaxSum + " " + " " + MinSum;
+// }
+// console.log(minimumMaximum([1,2,3,4,5]));
+
+
+// Complete the birthdayCakeCandles function below.
+function birthdayCakeCandles(ar) {
+
+    let  maxiHeight = Math.max(...ar);
+    let addToalCandels = [];
+
+    for(let i = 0; i<ar.length; i++){
+      if(ar[i] === maxiHeight){
+        addToalCandels.push(ar[i]);
+      }
+    }
+    return addToalCandels;
 }
-console.log(minimumMaximum([1,2,3,4,5]));
+console.log(birthdayCakeCandles([1,6,6,2,3,6,4]));
