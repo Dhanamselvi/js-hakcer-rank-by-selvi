@@ -136,3 +136,46 @@ function birthdayCakeCandles(ar) {
     return addToalCandels;
 }
 console.log(birthdayCakeCandles([1,6,6,2,3,6,4]));
+
+// Grading Students
+  // First Method
+
+// function gradingStudents(grades){
+//   let gradesSystem = [];
+//   for(let i = 0; i<grades.length; i++){
+//     if(grades[i] > 37 && (5 - (grades[i]%5) < 3)){
+//       gradesSystem[i] = grades[i] + (5 - (grades[i]%5));
+//     }else{
+//       gradesSystem[i] = grades[i]
+//     }
+//   }
+//   return gradesSystem;
+// }
+// console.log(gradingStudents([34,76,45,68,54]));
+
+// Second Method
+
+function gradingStudents(grades) {
+    // Write your code here
+    let roundedGrades = [];
+    for (let i = 0; i < grades.length; i++) {
+        let difference = multipleOfFive(grades[i]);
+        let finalGrade = difference + grades[i];
+        
+        if ((difference < 3) && (finalGrade >= 40)) {
+            roundedGrades.push(finalGrade);
+        } else {
+            roundedGrades.push(grades[i]);
+        }
+    }
+    return roundedGrades;
+}
+function multipleOfFive(x) {
+    let counter = 0;
+    while (x % 5 != 0) {
+        x++;
+        counter++;
+    }
+    return counter;
+}
+
