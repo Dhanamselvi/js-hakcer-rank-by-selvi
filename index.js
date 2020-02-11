@@ -215,12 +215,16 @@ console.log(countApplesAndOranges(2,3,1,5,[2],[-2]));
 
 // Kangaroo
 function kangaroo(x1, v1, x2, v2) {
-    var result = "";
-    if(x1 < x2 && v1 > v2){
-       result = "YES"
+   var result = "";
+    if(x1 < x2 && v1 < v2){
+       result = "NO"
     }
     else{
-         result = "NO"
+        if((v1 != v2) && ((x2-x1)%(v1-v2)==0)){
+            result = "YES"
+        }else{
+            result = "NO"
+        }
     }
     return result;
 }
