@@ -182,22 +182,47 @@ function multipleOfFive(x) {
 // Apple and Orange
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-  let appleTotal = 0;
-  let orangeTotal = 0;
-  for(let i = 0; i<apples.length; i++){
-    if(apples[i] + a >= s && apples[i] + a <= t){
-      appleTotal++;
-    }
-  }
 
-  for(let i = 0; i<oranges.length; i++){
-    if(oranges[i] + a >= s && oranges[i] + a <= t){
-      orangeTotal++;
-    }
-  }
-  console.log(appleTotal);
-  console.log(orangeTotal);
+  // First Method
+
+
+  // let appleTotal = 0;
+  // let orangeTotal = 0;
+  // for(let i = 0; i<apples.length; i++){
+  //   if(apples[i] + a >= s && apples[i] + a <= t){
+  //     appleTotal++;
+  //   }
+  // }
+
+  // for(let i = 0; i<oranges.length; i++){
+  //   if(oranges[i] + b >= s && oranges[i] + b <= t){
+  //     orangeTotal++;
+  //   }
+  // }
+  // console.log(appleTotal);
+  // console.log(orangeTotal);
+
+  // Second Method
+
+  let appleCount = apples.filter(val => val + a >= s && val + a <= t).length;
+  let orangeCount = oranges.filter(val => val + b >= s && val + b <= t).length;
+
+  console.log(appleCount);
+  console.log(orangeCount);
 }
+console.log(countApplesAndOranges(2,3,1,5,[2],[-2]));
 
-console.log(countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6]));
+
+// Kangaroo
+function kangaroo(x1, v1, x2, v2) {
+    var result = "";
+    if(x1 < x2 && v1 > v2){
+       result = "YES"
+    }
+    else{
+         result = "NO"
+    }
+    return result;
+}
+console.log(kangaroo(0,3,4,2))
 
