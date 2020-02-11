@@ -179,3 +179,25 @@ function multipleOfFive(x) {
     return counter;
 }
 
+// Apple and Orange
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let appleTotal = 0;
+  let orangeTotal = 0;
+  for(let i = 0; i<apples.length; i++){
+    if(apples[i] + a >= s && apples[i] + a <= t){
+      appleTotal++;
+    }
+  }
+
+  for(let i = 0; i<oranges.length; i++){
+    if(oranges[i] + a >= s && oranges[i] + a <= t){
+      orangeTotal++;
+    }
+  }
+  console.log(appleTotal);
+  console.log(orangeTotal);
+}
+
+console.log(countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6]));
+
