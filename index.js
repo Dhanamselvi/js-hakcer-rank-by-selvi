@@ -230,3 +230,26 @@ function kangaroo(x1, v1, x2, v2) {
 }
 console.log(kangaroo(0,3,4,2))
 
+// Complete the breakingRecords function below.
+function breakingRecords(scores) {
+  let lowestScore = scores[0];
+  let highestScore = scores[0]
+  let lowestBreakScore = 0;
+  let hightestBreakScore = 0;
+  for(let i = 1; i < scores.length; i++){
+    let points = scores[i];
+    if(points > highestScore){
+      highestScore = points;
+      hightestBreakScore = hightestBreakScore + 1;
+    }
+     if(points < lowestScore){
+      lowestScore = points;
+      lowestBreakScore = lowestBreakScore + 1;
+    }
+  }
+  return hightestBreakScore + " " + lowestBreakScore;
+}
+
+console.log(breakingRecords([45,56,23,12,09]));
+
+
