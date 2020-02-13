@@ -250,6 +250,6 @@ function breakingRecords(scores) {
   return hightestBreakScore + " " + lowestBreakScore;
 }
 
-console.log(breakingRecords([45,56,23,12,09]));
+console.log(breakingRecords([45,56,23,12,9]));
 
 
