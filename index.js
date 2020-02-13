@@ -252,4 +252,18 @@ function breakingRecords(scores) {
 
 console.log(breakingRecords([45,56,23,12,9]));
 
+// Complete the birthday function below.
+function birthday(s, d, m) {
+  let result = 0;
+  for(let i = 0; i<s.length; i++){
+    if(s.includes(m)){
+      var total = s[i] + s[i + 1];
+      if(total === d){
+        result++;
+      }
+    }
+  }
+  return result
+}
+console.log(birthday([4],4,1));
 
