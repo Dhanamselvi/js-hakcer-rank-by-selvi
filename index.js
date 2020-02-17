@@ -281,3 +281,16 @@ function super_reduced_string(s) {
   }
 }
 console.log(super_reduced_string("ppffccmmssnnhhbbmmggxxaaoommkkkkxx"));
+
+// Complete the camelcase function below.
+function camelcase(s) {
+ let count = 1;
+ for(let i = 0; i<s.length; i++){
+   if(s[i] === s[i].toUpperCase()){
+     count++
+   }
+ }
+ return count;
+}
+
+camelcase('saveChangesInTheEditor');
