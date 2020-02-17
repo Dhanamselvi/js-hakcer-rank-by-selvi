@@ -294,3 +294,48 @@ function camelcase(s) {
 }
 
 camelcase('saveChangesInTheEditor');
+
+// Complete the minimumNumber function below.
+function minimumNumber(n, password) {
+    // Return the minimum number of characters to make the password strong
+let numbers = "0123456789",
+lower_case = "abcdefghijklmnopqrstuvwxyz",
+upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+special_characters = "!@#$%^&*()-+";
+  let totalToHave = 0;
+  let haveNumbers = 0;
+  let haveLowerCase = 0;
+  let haveUpperCase = 0;
+  let haveSpecialChars = 0;
+  let newArr = password.split('');
+
+  newArr.forEach(char => {
+    if(numbers.includes(char)){
+      haveNumbers++;
+    } else if(upper_case.includes(char)){
+      haveUpperCase++;
+    }else if(lower_case.includes(char)){
+      haveLowerCase++;
+    }else if(special_characters.includes(char)){
+      haveSpecialChars++;
+    }
+  })
+
+  if(haveNumbers === 0){
+    totalToHave++;
+  }  if(haveLowerCase === 0){
+    totalToHave++;
+  }  if(haveUpperCase === 0){
+    totalToHave++;
+  }  if(haveSpecialChars === 0){
+    totalToHave++;
+  }
+
+    console.log(totalToHave)
+    if((totalToHave + n) < 6){
+    return 6-n;
+    } else{
+    return totalToHave;
+  }
+}
+console.log(minimumNumber(3,"hghfdsf@A"));
