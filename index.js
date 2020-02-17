@@ -267,3 +267,17 @@ function birthday(s, d, m) {
 }
 console.log(birthday([4],4,1));
 
+// Super Reduced String
+function super_reduced_string(s) {
+  if (s.length) {
+    for (let index = 0; index < s.length; index++) {
+      if (s[index] === s[index + 1]) {
+        return super_reduced_string(s.substring(0, index) + s.substring(index+2));
+      }
+    }
+    return s;
+  } else {
+    return "Empty String"
+  }
+}
+console.log(super_reduced_string("ppffccmmssnnhhbbmmggxxaaoommkkkkxx"));
